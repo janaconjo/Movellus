@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dart" style="background-color:  #004c61;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/client"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Histórico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Lista de agendamentos -->
+  <ion-list>
+    <ion-item *ngFor="let booking of bookings" class="animated fadeIn">
+      <ion-icon slot="start" name="car-sport" color="primary"></ion-icon>
+      <ion-label>
+        <h2>{{ booking.serviceType }} - {{ booking.vehicleType }}</h2>
+        <p><ion-icon name="location-outline" color="secondary"></ion-icon> {{ booking.currentLocation }} → {{ booking.destination }}</p>
+        <p><strong><ion-icon name="cash-outline" color="secondary"></ion-icon> Preço:</strong> {{ booking.price | currency }}</p>
+        <p><strong><ion-icon name="calendar-outline" color="secondary"></ion-icon> Data:</strong> {{ booking.serviceDate | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

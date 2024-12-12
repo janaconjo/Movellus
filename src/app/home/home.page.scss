@@ -1,0 +1,141 @@
+/* Configuração geral do conteúdo */
+ion-content {
+  --background: linear-gradient(135deg, #1a4d5d, #103847);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden; /* Evitar rolagem */
+}
+
+/* Estilo do container principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+  position: relative;
+}
+
+/* Animação suave para entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Texto de boas-vindas */
+.welcome-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: glowText 2s infinite alternate;
+}
+
+/* Animação de brilho no texto */
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 18px;
+  color: #c2e0e5;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  animation: slideIn 1s ease-out;
+}
+
+/* Animação suave para o subtítulo */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adição de um ícone decorativo */
+.icon-container {
+  font-size: 60px;
+  color: #c2e0e5;
+  margin-bottom: 20px;
+  animation: iconBounce 1.5s ease-in-out infinite alternate;
+}
+
+/* Animação para o ícone */
+@keyframes iconBounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Botão Get Started */
+.get-started-button {
+  margin-top: 250px;
+  width: 220px;
+  height: 60px; /* Altura maior para destacar */
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color:  #2f5058;
+  border: none;
+  border-radius: 50px; /* Mais arredondado */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  animation: bounceIn 1.5s ease-in-out infinite alternate;
+}
+
+/* Ícone no botão */
+.get-started-button .button-icon {
+  font-size: 24px;
+}
+
+/* Animação sutil para o botão */
+@keyframes bounceIn {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Botão Get Started - Hover e clique */
+.get-started-button:hover {
+  background-color: #005b4c;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.get-started-button:active {
+  transform: scale(0.95);
+}

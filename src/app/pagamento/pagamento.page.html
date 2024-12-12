@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="dart" style="background-color: #004c61;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/client"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pagamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resumo do Agendamento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <strong>Serviço:</strong> {{ bookingDetails.serviceType }}
+      </div>
+      <div>
+        <strong>Veículo:</strong> {{ bookingDetails.vehicleType }}
+      </div>
+      <div>
+        <strong>Data:</strong> {{ bookingDetails.serviceDate }}
+      </div>
+      <div>
+        <strong>Preço Total:</strong> €{{ finalPrice }}
+      </div>
+      <div>
+        <strong>Preço com Desconto:</strong> €{{ discountedPrice }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Escolha o Método de Pagamento</ion-label>
+    <ion-select [(ngModel)]="paymentMethod" placeholder="Selecione...">
+      <ion-select-option value="wallet">
+        <ion-icon name="wallet"></ion-icon> Carteira Móvel
+      </ion-select-option>
+      <ion-select-option value="card">
+        <ion-icon name="card"></ion-icon> Cartão de Crédito
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Se Carteira Móvel for selecionada -->
+  <ion-item *ngIf="paymentMethod === 'wallet'">
+    <ion-label>Selecione a Carteira Móvel</ion-label>
+    <ion-select [(ngModel)]="walletMethod" placeholder="Selecione...">
+      <ion-select-option value="mpesa">
+        <ion-icon name="logo-usd"></ion-icon> M-Pesa
+      </ion-select-option>
+      <ion-select-option value="emola">
+        <ion-icon name="logo-usd"></ion-icon> eMola
+      </ion-select-option>
+      <ion-select-option value="mkesh">
+        <ion-icon name="logo-usd"></ion-icon> Mkesh
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Se Cartão de Crédito for selecionado -->
+  <ion-item *ngIf="paymentMethod === 'card'">
+    <ion-label>Selecione o Banco</ion-label>
+    <ion-select [(ngModel)]="cardMethod" placeholder="Selecione...">
+      <ion-select-option value="bci">
+        <ion-icon name="logo-bank"></ion-icon> BCI
+      </ion-select-option>
+      <ion-select-option value="absa">
+        <ion-icon name="logo-bank"></ion-icon> ABSA
+      </ion-select-option>
+      <ion-select-option value="millenium">
+        <ion-icon name="logo-bank"></ion-icon> Millenium Bim
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="confirmPayment()" [disabled]="!paymentMethod">
+    <ion-icon name="checkmark-circle"></ion-icon> Confirmar Pagamento
+  </ion-button>
+</ion-content>

@@ -1,0 +1,164 @@
+/* Geral */
+ion-content {
+    --background: #f7f7f7;
+    padding: 20px;
+  }
+  
+  /* Cabeçalho */
+  ion-toolbar {
+    background-color: #008fb7;
+    --color: white;
+  }
+  
+  ion-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Cartões */
+  ion-card {
+    --background: white;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  ion-card:hover {
+    --box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  /* Títulos dos Cartões */
+  ion-card-header {
+    background-color: #547984;
+    padding: 10px;
+    color: white;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  ion-card-title {
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+  
+  /* Conteúdo do Cartão */
+  ion-card-content {
+    padding: 15px;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  ion-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Ícones */
+  ion-icon {
+    font-size: 1.2em;
+    color: #004c61;
+    margin-right: 10px;
+  }
+  
+  /* Formulário de Contato */
+  ion-input,
+  ion-textarea,
+  ion-select {
+    margin-bottom: 15px;
+  }
+  
+  ion-button {
+    --background: #004c61;
+    --color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ion-button:hover {
+    --background: #00374d;
+  }
+  
+  ion-button:disabled {
+    --background: #cccccc;
+  }
+  
+  ion-label {
+    font-size: 1em;
+  }
+  
+  /* FAQ - Expandir/Contrair */
+  ion-item .ion-label {
+    font-weight: 600;
+  }
+  
+  ion-item .ion-label:hover {
+    color: #004c61;
+    cursor: pointer;
+  }
+  
+  ion-item ion-label {
+    font-size: 1.1em;
+  }
+  
+  ion-card .faq-answer {
+    display: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: #555;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Redes Sociais */
+  ion-card .social-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  ion-card .social-item ion-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+  }
+  
+  ion-card .social-item ion-label {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  
+  /* Responsividade para dispositivos móveis */
+  @media screen and (max-width: 600px) {
+    ion-title {
+      font-size: 1.5em;
+    }
+  
+    ion-card-header {
+      padding: 15px;
+    }
+  
+    ion-card-title {
+      font-size: 1.2em;
+    }
+  
+    ion-item {
+      font-size: 1em;
+    }
+  
+    ion-button {
+      font-size: 1.1em;
+      padding: 12px;
+    }
+  }
+  

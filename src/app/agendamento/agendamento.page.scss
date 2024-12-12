@@ -1,0 +1,205 @@
+/* Estilo para o cartão de reserva */
+.booking-card {
+  --background: #ffffff;
+  --border-radius: 20px;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 30px;
+  background: linear-gradient(145deg, #e0eafc, #cfdef3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.booking-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o cartão de resumo da reserva */
+.booking-summary-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.booking-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o título do resumo */
+.booking-summary-card ion-label h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o parágrafo no resumo */
+.booking-summary-card ion-label p {
+  color: #000000;
+  font-size: 1em;
+}
+
+/* Estilo para texto em negrito no resumo */
+.booking-summary-card ion-label strong {
+  color: #2c3e50;
+}
+
+/* Container para os botões */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Estilo para os botões */
+ion-button {
+  --border-radius: 12px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+ion-button:hover {
+  transform: scale(1.05);
+}
+
+ion-button[color="danger"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+ion-button[color="primary"] {
+  background-color: #3498db;
+  color: white;
+}
+
+ion-button[fill="solid"] {
+  background-color: #5c6bc0;
+  color: white;
+}
+
+/* Estilo para o cartão de reserva */
+.booking-card {
+  border-radius: 20px;
+  background-color: linear-gradient(145deg, #e0eafc, #cfdef3);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo para o cartão de resumo da reserva */
+.booking-summary-card {
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* Estilo para o título em h2 dentro do ion-label */
+ion-label h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Estilo para os botões dentro de ion-footer */
+ion-footer ion-button {
+  margin-bottom: 10px;
+}
+
+/* Estilo para inputs, selects e textareas */
+ion-select, ion-input, ion-textarea {
+  border-radius: 10px;
+  --background: none
+  
+}
+
+/* Estilo geral para ion-button */
+ion-button {
+  background-color: #5c6bc0;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilo específico para botão com preenchimento sólido */
+ion-button[fill="solid"] {
+  background-color: #5c6bc0;
+}
+
+/* Estilo para botão primário */
+ion-button[color="primary"] {
+  background-color: #3f51b5;
+}
+
+/* Estilo para botão de perigo */
+ion-button[color="danger"] {
+  background-color: #f44336;
+}
+
+/* Estilo para os itens de entrada */
+ion-item {
+  --background: #fff;
+  --border-radius: 12px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 15px;
+  position: relative;
+}
+
+/* Efeito de hover nos itens */
+ion-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o ícone dentro do item */
+ion-icon {
+  color: #c06b5c;
+  font-size: 20px;
+}
+
+/* Estilo para os rótulos dentro do item */
+ion-label {
+  color: #181717;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilo para inputs, selects e textareas */
+ion-input, ion-select, ion-textarea {
+  --background: #f8f9fa;
+  --border-radius: 10px;
+  --padding-start: 10px;
+  font-size: 14px;
+  color: #232121;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilo para o foco em inputs, selects e textareas */
+ion-input:focus, ion-select:focus, ion-textarea:focus {
+  border-color: #5c6bc0;
+}
+
+/* Estilo para ion-card */
+ion-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o rodapé */
+ion-footer {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+

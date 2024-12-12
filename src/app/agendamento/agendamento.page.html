@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="dart" style="background-color: #004c61;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/client"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agendamentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="booking-card ion-padding">
+    <form (ngSubmit)="saveOrUpdateBooking()">
+    
+      <ion-label position="stacked">
+        <ion-icon name="build" slot="start"></ion-icon> Tipo de Serviço
+      </ion-label>
+      <ion-select [(ngModel)]="serviceType" name="serviceType" required (ionChange)="calculateCost()">
+        <ion-select-option value="entrega">Entrega de Produtos</ion-select-option>
+        <ion-select-option value="mudanca">Transporte de Mudanças</ion-select-option>
+        <ion-select-option value="eventos">Transporte para Eventos</ion-select-option>
+        <ion-select-option value="construcao">Apoio à Construção</ion-select-option>
+        <ion-select-option value="personalizado">Transporte Personalizado</ion-select-option>
+        <ion-select-option value="turismo">Transporte para Turismo</ion-select-option>
+      </ion-select>
+
+ 
+      <ion-label position="stacked">
+        <ion-icon name="car" slot="start"></ion-icon> Tipo de Veículo
+      </ion-label>
+      <ion-select [(ngModel)]="vehicleType" name="vehicleType" required (ionChange)="calculateCost()">
+        <ion-select-option value="carro">Carro</ion-select-option>
+        <ion-select-option value="mota">Mota</ion-select-option>
+        <ion-select-option value="camiao">Camião</ion-select-option>
+      </ion-select>
+
+   
+      <ion-label position="stacked">
+        <ion-icon name="alarm" slot="start"></ion-icon> Tem Urgência?
+      </ion-label>
+      <ion-select [(ngModel)]="urgency" name="urgency" (ionChange)="calculateCost()">
+        <ion-select-option value="urgente">Sim</ion-select-option>
+        <ion-select-option value="normal">Não</ion-select-option>
+      </ion-select>
+
+     
+      <ion-label position="stacked">
+        <ion-icon name="location" slot="start"></ion-icon> Localização Atual
+      </ion-label>
+      <ion-input [(ngModel)]="currentLocation" name="currentLocation" required placeholder="Insira a localização atual"></ion-input>
+
+     
+      <ion-label position="stacked">
+        <ion-icon name="location-outline" slot="start"></ion-icon> Destino
+      </ion-label>
+      <ion-input [(ngModel)]="destination" name="destination" required placeholder="Insira o destino"></ion-input>
+
+
+      <ion-label position="stacked">
+        <ion-icon name="ribbon" slot="start"></ion-icon> Distância (km)
+      </ion-label>
+      <ion-input [(ngModel)]="distance" name="distance" type="number" required placeholder="Insira a distância em km" (ionBlur)="calculateCost()"></ion-input>
+
+      
+      <ion-label position="stacked">
+        <ion-icon name="calendar" slot="start"></ion-icon> Data do Serviço
+      </ion-label>
+      <ion-input [(ngModel)]="serviceDate" name="serviceDate" type="date" required placeholder="Selecione a data"></ion-input>
+
+      <ion-label position="stacked">
+        <ion-icon name="create" slot="start"></ion-icon> Observações
+      </ion-label>
+      <ion-textarea [(ngModel)]="remarks" name="remarks" placeholder="Insira observações (opcional)"></ion-textarea>
+
+     
+      <ion-label position="stacked">
+        <ion-icon name="cash" slot="start"></ion-icon> Preço Final
+      </ion-label>
+      <ion-input [(ngModel)]="finalPrice" name="finalPrice" readonly placeholder="Preço calculado"></ion-input>
+
+    
+      <ion-item *ngIf="applyDiscount">
+        <ion-label position="stacked">
+          <ion-icon name="gift" slot="start"></ion-icon> Desconto de Natal (20%)
+        </ion-label>
+        <ion-input [(ngModel)]="discountedPrice" name="discountedPrice" readonly placeholder="Preço com desconto"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!isFormValid()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        {{ isEditing ? 'Atualizar Agendamento' : 'Criar Agendamento' }}
+      </ion-button>
+    </form>
+
+    <ion-list>
+      <ion-item *ngFor="let booking of bookings">
+        <ion-card class="booking-summary-card">
+          <ion-label>
+            <h2>{{ booking.serviceType }} - {{ booking.vehicleType }}</h2>
+            <p>{{ booking.currentLocation }} → {{ booking.destination }}</p>
+            <p><strong>Preço:</strong> {{ booking.price | currency }} Mts</p>
+          </ion-label>
+
+          
+    <ion-button *ngIf="paymentButtonVisible" expand="full" color="success" (click)="goToPaymentPage()">
+      <ion-icon name="cash" slot="start"></ion-icon> Fazer Pagamento
+    </ion-button>
+
+
+          <!-- Botões Editar e Excluir com Ícones -->
+          <div class="button-container">
+            <ion-button (click)="deleteBooking(booking.id)" color="dart" style="background-color: #3498db; border-radius: 5px;" fill="solid" expand="block">
+              <ion-icon name="trash" slot="start"></ion-icon> Excluir
+            </ion-button>
+            <ion-button (click)="editBooking(booking)" color="dart"  style="background-color:#e67e22; border-radius: 5px;"  fill="solid" expand="block">
+              <ion-icon name="create" slot="start"></ion-icon> Editar
+            </ion-button>
+          </div>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+ 
+  </ion-card>
+</ion-content>

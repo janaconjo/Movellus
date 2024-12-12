@@ -1,0 +1,204 @@
+ion-content {
+  --background: linear-gradient(135deg, #e6f7ff, #ffffff); /* Gradiente suave de azul claro e branco */
+  background-color: #ffffff; /* Cor de fallback caso o gradiente não funcione */
+}
+
+body {
+  --ion-background-color: #f4f5f8; /* Cor de fundo suave */
+  --ion-color-dart: #004c61; /* Cor personalizada para cabeçalho e botões */
+}
+
+/* Barra de pesquisa */
+ion-searchbar {
+  margin: 15px 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards de Serviços */
+ion-card {
+  margin: 10px 5px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #004c61;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+ion-card-content {
+  font-size: 0.9rem;
+  color: #1e1d1d;
+  text-align: justify;
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+/* Botão "Agendar Serviço" */
+ion-button[color="success"] {
+  margin: 20px auto;
+  width: 90%;
+  font-size: 1rem;
+  font-weight: bold;
+  --background: #28a745; /* Verde personalizado */
+  --background-hover: #218838;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-button[color="success"] ion-icon {
+  font-size: 1.2rem;
+}
+
+/* Menu Lateral */
+ion-menu {
+  --background: var(--ion-background-color); /* Fundo branco */
+}
+
+ion-menu-button {
+  color: #ffffff; /* Ícone branco no menu */
+}
+
+.motorista-footer ion-button {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Ajuste do Conteúdo Principal */
+.ion-page {
+  background-color: var(--ion-background-color);
+}
+
+/* Layout Responsivo */
+@media (min-width: 768px) {
+  ion-card img {
+    height: 200px;
+  }
+
+  ion-card-title {
+    font-size: 1.4rem;
+    letter-spacing: -0.6px;
+  }
+
+  ion-card-content {
+    font-size: 1rem;
+    letter-spacing: -0.4px;
+  }
+
+  ion-button[color="success"] {
+    font-size: 1.1rem;
+  }
+
+  .motorista-footer ion-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  ion-card-title {
+    font-size: 1rem;
+    letter-spacing: -0.3px;
+  }
+
+  ion-card-content {
+    font-size: 0.95rem;
+    letter-spacing: -0.10ch;
+  }
+
+  ion-button[color="success"] {
+    font-size: 0.9rem;
+  }
+
+  .motorista-footer ion-button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Card de Promoções de Natal */
+.natal-promo {
+  margin: 20px 5px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+}
+
+.natal-promo ion-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d32f2f;
+  text-align: center;
+}
+
+.natal-promo ion-card-content {
+  font-size: 1rem;
+  color: #004c61;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.natal-promo ion-button {
+  margin-top: 15px;
+  --background: #d32f2f;
+  --background-hover: #a52727;
+}
+/* Estilização do Menu Lateral */
+ion-menu {
+  --background:none ;
+  background-color: linear-gradient(135deg, #004c61, #007a99); /* Fundo com gradiente */
+  color: #ffffff;
+}
+
+ion-list {
+  margin-top: 10px;
+}
+
+ion-item {
+  --background-hover: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
+}
+
+ion-item ion-icon {
+  font-size: 1.4rem;
+  color:#004c61; /* Ícones brancos */
+}
+
+ion-item ion-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #004c61; /* Texto branco */
+}
+
+/* Rodapé do Menu */
+.motorista-footer ion-button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #28a745; /* Cor verde personalizada */
+  --background-hover: #218838;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Header */
+ion-menu-header {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Layout do Gradiente 
+.ion-page {
+  --ion-background-color: #727fa5; /* Fundo padrão */
+
+

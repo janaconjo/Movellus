@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar  color="dart" style="background-color: #004c61;"> 
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/client"></ion-back-button>
+  </ion-buttons>
+
+    <ion-title style=" color: rgb(255, 255, 255);">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="profile-card">
+    <ion-card-header>
+      <ion-card-title>Informações do Usuário</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="user">
+      <ion-item>
+        <ion-label><strong>Nome Completo:</strong></ion-label>
+        <ion-text>{{ user.fullName }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Email:</strong></ion-label>
+        <ion-text>{{ user.email }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="user.phoneNumber">
+        <ion-label><strong>Telefone:</strong></ion-label>
+        <ion-text>{{ user.phoneNumber }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="user.dateOfBirth">
+        <ion-label><strong>Data de Nascimento:</strong></ion-label>
+        <ion-text>{{ user.dateOfBirth | date }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="user.address">
+        <ion-label><strong>Endereço:</strong></ion-label>
+        <ion-text>{{ user.address }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="user.bio">
+        <ion-label><strong>Biografia:</strong></ion-label>
+        <ion-text>{{ user.bio }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-content *ngIf="!user">
+      <ion-text>Carregando dados...</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="danger" (click)="logout()">
+    <ion-icon slot="start" name="log-out"></ion-icon>
+    Sair
+  </ion-button>
+
+  <!-- Botão para editar perfil -->
+  <ion-button expand="block" (click)="editProfile()">
+    <ion-icon slot="start" name="create"></ion-icon>
+    Editar Perfil
+  </ion-button>
+</ion-content>

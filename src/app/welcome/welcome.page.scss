@@ -1,0 +1,154 @@
+
+.welcome-background {
+  background:  #295255;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.welcome-container {
+  text-align: center;
+  color: #ffffff;
+  margin-top: -200px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f0f5f7;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.animate-fade-in-bounce {
+  animation: fadeInBounce 1.5s ease-in-out, glowText 2s infinite;
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f0f5f7;
+  }
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-option {
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+
+.card-option ion-icon {
+  color: #295255;
+  margin-top: 20px;
+}
+
+.card-option ion-card-title {
+  font-size: 1rem;
+  color: #295255;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.card-option:hover {
+  transform: scale(1.1);
+  background-color: #e1ecef;
+  cursor: pointer;
+}
+
+.animate-hover-glow {
+  transition: all 0.3s ease-in-out;
+}
+
+.animate-hover-glow:hover {
+  box-shadow: 0 0 15px #e1ecef, 0 0 30px #e1ecef;
+}
+
+.fab-rotate-pulse {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.fab-rotate-pulse:hover {
+  transform: rotate(360deg) scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
+.help-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.help-content h2 {
+  color: #295255;
+  margin-bottom: 15px;
+}
+
+.help-content ol {
+  list-style: decimal;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.help-content li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #295255;
+}
+

@@ -1,0 +1,73 @@
+<ion-header >
+  <ion-toolbar color="dart" style="background-color: #004c61;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/client"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Torne-se Motorista</ion-title>
+  </ion-toolbar>
+</ion-header>
+  <!-- Mensagem de erro -->
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-text color="danger">{{ errorMessage }}</ion-text>
+  </div>
+
+<ion-content class="ion-padding">
+  <h2>Junte-se à nossa equipa de motoristas</h2>
+  <p>Preencha os campos abaixo para se cadastrar como motorista.</p>
+
+
+  <ion-item>
+    <ion-label position="stacked">Sua Foto</ion-label>
+    <div class="photo-container">
+      <img *ngIf="photo" [src]="photo" alt="Foto do Motorista" />
+    </div>
+    <ion-button expand="block"  color="dart" style="background-color: brown; border-radius: 10px;" (click)="selectPhoto()">Selecionar Foto</ion-button>
+  </ion-item>
+
+ 
+  <ion-item>
+    <ion-label position="stacked">Nome Completo</ion-label>
+    <ion-input [(ngModel)]="nomeCompleto" placeholder="Insira seu nome"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="stacked">Número de Telefone</ion-label>
+    <ion-input [(ngModel)]="telefone" type="tel" placeholder="Insira seu número de telefone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">E-mail</ion-label>
+    <ion-input [(ngModel)]="email" type="email" placeholder="Insira seu e-mail"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Número do BI</ion-label>
+    <ion-input [(ngModel)]="documento" placeholder="Insira o número do seu documento"></ion-input>
+  </ion-item>
+
+ 
+  <ion-item>
+    <ion-label position="stacked">Data de Nascimento</ion-label>
+    <ion-datetime [(ngModel)]="dataNascimento"></ion-datetime>
+  </ion-item>
+
+ 
+  <ion-item>
+    <ion-label position="stacked">Categoria do Veículo</ion-label>
+    <ion-select [(ngModel)]="categoriaVeiculo" placeholder="Selecione uma categoria">
+      <ion-select-option value="carro">Carro</ion-select-option>
+      <ion-select-option value="moto">Moto</ion-select-option>
+      <ion-select-option value="caminhão">Caminhão</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+ 
+  <ion-item>
+    <ion-label position="stacked">Número da Licença</ion-label>
+    <ion-input [(ngModel)]="licenca" placeholder="Insira o número da licença"></ion-input>
+  </ion-item>
+
+
+  <ion-button expand="block" color="success" (click)="submitForm()">Finalizar Cadastro</ion-button>
+</ion-content>

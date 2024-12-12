@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <!-- Container principal -->
+  <div class="background">
+    <!-- Cabeçalho com imagem e título -->
+    <div class="illustration">
+      <img src="/assets/Wavy Buddies - Address.png" alt="Ilustração">
+      <h2>Iniciar Sessão</h2>
+    </div>
+
+    <!-- Formulário -->
+    <div class="form-container">
+      <ion-card class="form-wrapper">
+        <ion-card-content>
+          <!-- Campo de Nome de Usuário -->
+          <ion-item>
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-input 
+              type="text" 
+              placeholder="Nome de usuário" 
+              [(ngModel)]="email" 
+              name="email" 
+              required>
+            </ion-input>
+          </ion-item>
+
+          <!-- Campo de Senha -->
+          <ion-item>
+            <ion-icon name="lock-closed" slot="start"></ion-icon>
+            <ion-input 
+              type="password" 
+              placeholder="Senha" 
+              [(ngModel)]="password" 
+              name="password" 
+              required>
+            </ion-input>
+          </ion-item>
+
+          <!-- Botão de Login -->
+          <ion-button 
+            expand="block" 
+            fill="solid" 
+            class="login-button" 
+            (click)="login()">
+            INICIAR SESSÃO
+          </ion-button>
+
+          <!-- Link para Registro -->
+          <p class="register-link">
+            Ainda não tem conta? <a routerLink="/register">Cadastre-se</a>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

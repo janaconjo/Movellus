@@ -1,0 +1,118 @@
+/* Fundo principal */
+ion-content {
+  --background: #004c61; /* Cor de fundo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+/* Cabeçalho com imagem e título */
+.background .illustration {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.background .illustration img {
+  width: 200px; /* Largura da imagem */
+  height: auto;
+}
+
+.background .illustration h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #004c61;
+  font-weight: bold;
+}
+
+/* Container do formulário */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+/* Estilização do formulário */
+.form-wrapper {
+  background: #ffffff; /* Fundo branco */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra do formulário */
+}
+
+/* Campos de entrada */
+ion-item {
+  margin-bottom: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  --highlight-color-focused: #004c61; /* Cor de foco */
+  --min-height: 50px; /* Altura mínima */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra dos campos */
+}
+
+ion-icon {
+  color: #004c61; /* Cor do ícone */
+  font-size: 20px;
+}
+
+/* Botão de cadastro */
+.login-button {
+  --background: none;
+  background: #004c61; /* Cor do botão */
+  border-radius: 25px; /* Botão arredondado */
+  color: #fff; /* Cor do texto */
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+  transition: all 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.login-button:hover {
+  background: #295255; /* Cor ao passar o mouse */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Link para login */
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #295255;
+}
+
+.register-link a {
+  color: #004c61; /* Cor do link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.register-link a:hover {
+  color: #295255; /* Cor ao passar o mouse */
+}
+
+/* Animações suaves */
+.form-wrapper {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h2{
+  position: relative;
+  top: -10px;
+}

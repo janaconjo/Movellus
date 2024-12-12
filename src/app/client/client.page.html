@@ -1,0 +1,88 @@
+<ion-app>
+  <!-- Menu Lateral -->
+  <ion-menu contentId="main-content">
+    <ion-header style="background-color: #004c61;">
+      <ion-toolbar  color="dart">
+        <ion-title >Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item button routerLink="/perfil">
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/historico">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          <ion-label>Histórico</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/avaliacao">
+          <ion-icon slot="start" name="star-outline"></ion-icon>
+          <ion-label>Avaliação</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/suporte">
+          <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+          <ion-label>Suporte</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-footer class="motorista-footer">
+        <ion-button expand="block" routerLink="/motorista" style="background-color: #6aadbf;" color="dart">
+          <ion-icon name="car-outline" slot="start"></ion-icon>
+          Torne-se Motorista
+        </ion-button>
+      </ion-footer>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Conteúdo Principal -->
+  <div class="ion-page" id="main-content">
+    <ion-header  style="background-color: #004c61;">
+      <ion-toolbar  color="dart">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #ffffff;">JaTreak</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <!-- Barra de Pesquisa -->
+      <ion-searchbar [(ngModel)]="searchText" debounce="300" placeholder="Pesquise serviços..." animated></ion-searchbar>
+
+    
+   <!-- Promoções de Natal -->
+<ion-card class="natal-promo">
+  <div class="luzes natal-luzes-esquerda"></div>
+  <ion-card-header>
+    <ion-card-title>🎄 Promoções de Natal 🎁</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Aproveite descontos incríveis nos nossos serviços durante esta época natalina!
+    <ul>
+      <li>🎅 20% de desconto em transporte de materiais.</li>
+      <li>🎁 Aluguel de carros para eventos a preços especiais.</li>
+      <li>🌟 Promoção válida até 25 de dezembro!</li>
+    </ul>
+   
+  </ion-card-content>
+ 
+</ion-card>
+
+
+      <!-- Serviços Disponíveis -->
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" *ngFor="let service of filteredServices()" class="service-card">
+            <ion-card button routerLink="/agendamento" class="service-card">
+              <ion-img [src]="service.img"></ion-img>
+              <ion-card-header>
+                <ion-card-title>{{ service.title }}</ion-card-title>
+              </ion-card-header>
+              
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-content>
+  </div>

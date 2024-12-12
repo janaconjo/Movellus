@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar color="dart" style="background-color: #004c61;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/client"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #e6f7ff;">Avaliação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="avaliacao-container">
+    <h2>Avalie nossos serviços</h2>
+    <p>Deixe sua opinião sobre os serviços que você agendou.</p>
+
+    <!-- Pontuação -->
+    <ion-item class="rating-item">
+      <ion-label class="rating-label">Escolha uma pontuação:</ion-label>
+      <ion-range min="1" max="5" snaps="true" step="1" color="primary">
+        <ion-label slot="start">1</ion-label>
+        <ion-label slot="end">5</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <!-- Comentário -->
+    <ion-textarea placeholder="Escreva seu comentário aqui..."></ion-textarea>
+
+    <!-- Botão Enviar -->
+    <ion-button expand="block" color="success" onclick="enviarAvaliacao()">Enviar Avaliação</ion-button>
+
+    <!-- Mensagem de Confirmação -->
+    <div id="mensagem-confirmacao" class="mensagem-confirmacao">
+      <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      <p>Avaliação enviada com sucesso! Obrigado por nos ajudar a melhorar.</p>
+    </div>
+  </div>
+</ion-content>
+
+<style>
+
+.avaliacao-container {
+  text-align: center;
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+}
+
+/* Título */
+.avaliacao-container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #004c61;
+  margin-bottom: 10px;
+}
+
+/* Parágrafo descritivo */
+.avaliacao-container p {
+  font-size: 1rem;
+  color: #1e1d1d;
+  margin-bottom: 20px;
+}
+
+/* Estilização do ion-item da pontuação */
+.rating-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  padding: 10px;
+}
+
+/* Rótulo da pontuação */
+.rating-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #004c61;
+}
+
+/* Estilização do campo de comentário */
+ion-textarea {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 15px 0; /* Espaço entre os elementos acima e abaixo */
+}
+
+/* Botão de Envio */
+ion-button {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  --background: #28a745;
+  --background-hover: #218838;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mensagem de Confirmação */
+.mensagem-confirmacao {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  padding: 15px;
+  color: #155724;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem-confirmacao ion-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Layout Responsivo */
+@media (min-width: 768px) {
+  .avaliacao-container {
+    padding: 30px;
+  }
+
+  .avaliacao-container h2 {
+    font-size: 2rem;
+  }
+
+  .avaliacao-container p {
+    font-size: 1.1rem;
+  }
+
+  ion-button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .avaliacao-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .avaliacao-container p {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<script>
+function enviarAvaliacao() {
+  // Exibir a mensagem de confirmação
+  const mensagem = document.getElementById('mensagem-confirmacao');
+  mensagem.style.display = 'block';
+
+  // Opcional: Limpar campos após envio
+  setTimeout(() => {
+    mensagem.style.display = 'none'; // Oculta a mensagem após 3 segundos
+  }, 3000);
+}
+</script>

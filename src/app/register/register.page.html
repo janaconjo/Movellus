@@ -1,0 +1,86 @@
+<ion-content [fullscreen]="true">
+  <!-- Cabeçalho -->
+  <div class="background">
+    <div class="illustration">
+      <ion-icon name="arrow-back" routerLink="/login" routerDirection="back" 
+                style="position: absolute; left: 20px; top: 20px; font-size: 24px; color: #004c61;">
+      </ion-icon>
+      <img src="/assets/Wavy Buddies - Address.png" alt="Logo">
+      <h2>Conectar-se</h2>
+    </div>
+  </div>
+
+  <!-- Container do Formulário -->
+  <div class="form-container">
+    <div class="form-wrapper">
+      <!-- Nome Completo -->
+      <ion-item [class.error]="isFullNameInvalid">
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-input 
+          type="text" 
+          placeholder="Nome completo" 
+          [(ngModel)]="fullName" 
+          required 
+          (ionInput)="validateFullName()">
+        </ion-input>
+      </ion-item>
+      <p class="error-message" *ngIf="isFullNameInvalid">O nome completo é obrigatório.</p>
+
+      <!-- Email -->
+      <ion-item [class.error]="isEmailInvalid">
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-input 
+          type="email" 
+          placeholder="Email" 
+          [(ngModel)]="email" 
+          required 
+          (ionInput)="validateEmail()">
+        </ion-input>
+      </ion-item>
+      <p class="error-message" *ngIf="isEmailInvalid">Por favor, insira um email válido.</p>
+
+      <!-- Senha -->
+      <ion-item>
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input 
+          type="password" 
+          placeholder="Senha" 
+          [(ngModel)]="password" 
+          (ionInput)="checkPasswordStrength()" 
+          required>
+        </ion-input>
+      </ion-item>
+      <p class="password-strength" 
+         [ngStyle]="{'color': passwordStrengthColor}">
+         {{ passwordStrength ? '' + passwordStrength : '' }}
+      </p>
+
+      <!-- Confirmar Senha -->
+      <ion-item [class.error]="isPasswordMismatch">
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input 
+          type="password" 
+          placeholder="Confirmar senha" 
+          [(ngModel)]="confirmPassword" 
+          (ionInput)="validatePasswordMatch()" 
+          required>
+        </ion-input>
+      </ion-item>
+      <p class="error-message" *ngIf="isPasswordMismatch">As senhas não coincidem.</p>
+
+      <!-- Botão Cadastrar -->
+      <ion-button 
+        expand="block" 
+        fill="solid" 
+        class="login-button" 
+        (click)="register()">
+        Cadastrar
+      </ion-button>
+
+      <!-- Link para Login -->
+      <p class="register-link">
+        Já tem uma conta? <a routerLink="/login">Iniciar Sessão</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

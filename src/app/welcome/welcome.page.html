@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="dart" style="background-color: #d1dad5;">
+    <ion-title>JaTreak</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">
+        <ion-icon name="power-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="welcome-background">
+    <div class="welcome-container">
+      <h1 class="animate-fade-in-bounce">Bem-vindo(a) ao JaTreak!</h1>
+      <p class="animate-typing">
+        Oferecemos serviços de transporte para todas as ocasiões. Escolha como deseja continuar!
+      </p>
+
+      <div class="card-container">
+        <ion-card class="card-option animate-hover-glow" routerLink="/client">
+          <ion-icon name="car-outline" size="large"></ion-icon>
+          <ion-card-title>Sou Cliente</ion-card-title>
+        </ion-card>
+
+        <ion-card class="card-option animate-hover-glow" routerLink="/provider">
+          <ion-icon name="briefcase-outline" size="large"></ion-icon>
+          <ion-card-title>Sou Prestador</ion-card-title>
+        </ion-card>
+      </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button class="fab-rotate-pulse" color="secondary" routerLink="/support">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
